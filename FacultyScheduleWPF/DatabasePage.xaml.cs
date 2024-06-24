@@ -2,7 +2,6 @@
 using System.Windows;
 using System.Windows.Controls;
 using FacultyScheduleWPF.Models;
-
 namespace FacultyScheduleWPF
 {
     public partial class DatabasePage : UserControl
