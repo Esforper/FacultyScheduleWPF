@@ -1,28 +1,35 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace FacultyScheduleWPF
 {
-    /// <summary>
-    /// MainWindow.xaml etkileşim mantığı
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void HomeButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(new HomePage());
+        }
+
+        private void SettingsButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(new SettingsPage());
+        }
+
+        private void DbButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainContent.Navigate(new DatabasePage());
+        }
+
+        public void NavigateToSpacePage(string depoAdi)
+        {
+            SpacePage spacePage = new SpacePage();
+            spacePage.DepoAdi = depoAdi;
+            MainContent.Navigate(spacePage);
         }
     }
 }

@@ -1,12 +1,22 @@
 ﻿<Window x:Class="FacultyScheduleWPF.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:FacultyScheduleWPF"
-        mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <!-- Sidebar için -->
+            <ColumnDefinition Width="*"/>
+            <!-- Ana içerik alanı için -->
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Background="LightGray">
+            <Button Content="Home" Click="HomeButton_Click" Margin="10"/>
+            <Button Content="Veri Tabanı" Click="DbButton_Click" Margin="10"/>
+            <Button Content="Settings" Click="SettingsButton_Click" Margin="10"/>
+            <!-- Diğer menü öğeleri -->
+        </StackPanel>
+
+        <Frame x:Name="MainContent" Grid.Column="1"/>
     </Grid>
 </Window>
